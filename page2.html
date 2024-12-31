@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Days and Time Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background: #FECAFF;
+    }
+    #counter {
+      font-size: 2rem;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>我们认识的日子</h1>
+  <div id="counter">Calculating...</div>
+
+  <script>
+    function updateCounter() {
+      const startDate = new Date("2024-11-01T00:00:00"); // Start from November 1st
+      const now = new Date(); // Current date and time
+      const timeDifference = now - startDate; // Difference in milliseconds
+
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+      document.getElementById('counter').textContent =
+        ` ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    // Update the counter every second
+    setInterval(updateCounter, 1000);
+    updateCounter(); // Initial call to show immediately
+  </script>
+
+  <h4>今年没有什么好事，就是遇到了一个男孩，动了想和他一辈子的念头。他的出现让我爱不释手。 
+    我想让你知道，你值得我为你付出这段距离。有一天，我们不必说再见，我们会回首往事，说我们做到了。
+    爱不分距离。我会等你，我希望你也会等我，真正的爱不会匆忙，也不会要求立即得到答案，它知道有时生活需要耐心和时间。
+    等待并不容易，但为了你，我很乐意这么做。因为你值得我花每一刻时间，希望和相信我们。分开只会让我更加珍惜我们拥有的一切，
+    我等待的每一天，我都紧紧抓住我爱上你的所有原因，那些小小的瞬间、欢笑和我们之间的理解。我深知，如果我们注定要在一起，
+    合适的时机就会到来，到那时，我们会更坚强、更自信，准备好迎接任何可能发生的事情。因为像我们这样的爱情不会凭空而来，它很罕见，我愿意等待一生来实现它。
+    我会一直爱你，你可以一遍遍的确认。
+    <br>
+    <br>
+    这不是完成的网站，等下一次更新吧！ 嘿嘿
+  </h4>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+/* Global Styles */
+body {
+    margin: 32px;
+    background: #000000;
+}
+
+/* Pin Screen */
+.pin-screen {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 16px;
+    gap: 16px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px; /* Adjust max width for larger screens */
+    background: #DDBAFF;
+    margin: 0 auto; /* Center the pin screen on the page */
+}
+
+.pin-value {
+    outline: none;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 4px;
+}
+
+.pin-divider {
+    height: 1px;
+    width: 100%;
+    border: none;
+    background: #000000;
+    margin: 0;
+}
+
+.pin-keyboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.pin-keyboard-key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    cursor: pointer;
+    font-family: 'Lexend', sans-serif;
+    font-size: 22px;
+    color: #555555;
+    background: #DDBAFF;
+    border: 2px solid #000000;
+    border-radius: 4px;
+}
+
+.pin-keyboard-key:active {
+    background: #000000;
+}
+
+/* Snowflake Styling */
+.snowflake {
+    color: #fff;
+    font-size: 1.5em;  /* Default size */
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    opacity: 0.8;  /* Make snowflakes semi-transparent */
+    animation: snowflakes-fall linear infinite, snowflakes-shake ease-in-out infinite;
+}
+
+/* Snowflakes Falling */
+@keyframes snowflakes-fall {
+    0% {
+        top: -10%;
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        opacity: 0.5;
+    }
+}
+
+/* Snowflakes Horizontal Shake (Wind effect) */
+@keyframes snowflakes-shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(50px);  /* Slight horizontal movement */
+    }
+}
+
+/* Snowflakes Random Animation Durations and Delays */
+.snowflake:nth-of-type(1) {
+    left: 1%;
+    font-size: 1.2em;
+    animation-duration: 10s, 3s;
+    animation-delay: 0s, 0s;
+}
+
+.snowflake:nth-of-type(2) {
+    left: 10%;
+    font-size: 1.6em;
+    animation-duration: 12s, 2.5s;
+    animation-delay: 1s, 0.5s;
+}
+
+.snowflake:nth-of-type(3) {
+    left: 20%;
+    font-size: 1.3em;
+    animation-duration: 15s, 4s;
+    animation-delay: 2s, 1s;
+}
+
+.snowflake:nth-of-type(4) {
+    left: 30%;
+    font-size: 1.7em;
+    animation-duration: 20s, 5s;
+    animation-delay: 3s, 1.5s;
+}
+
+.snowflake:nth-of-type(5) {
+    left: 40%;
+    font-size: 1.5em;
+    animation-duration: 18s, 4.5s;
+    animation-delay: 4s, 2s;
+}
+
+.snowflake:nth-of-type(6) {
+    left: 50%;
+    font-size: 1.2em;
+    animation-duration: 14s, 3s;
+    animation-delay: 5s, 2.5s;
+}
+
+.snowflake:nth-of-type(7) {
+    left: 60%;
+    font-size: 1.8em;
+    animation-duration: 22s, 6s;
+    animation-delay: 6s, 3s;
+}
+
+.snowflake:nth-of-type(8) {
+    left: 70%;
+    font-size: 1.4em;
+    animation-duration: 17s, 4s;
+    animation-delay: 7s, 3.5s;
+}
+
+.snowflake:nth-of-type(9) {
+    left: 80%;
+    font-size: 1.1em;
+    animation-duration: 12s, 3.2s;
+    animation-delay: 8s, 4s;
+}
+
+.snowflake:nth-of-type(10) {
+    left: 90%;
+    font-size: 1.6em;
+    animation-duration: 16s, 4.2s;
+    animation-delay: 10s, 5s;
+}
+
+/* Add more snowflakes for denser effect */
+.snowflake:nth-of-type(11) {
+    left: 15%;
+    font-size: 1.5em;
+    animation-duration: 13s, 3.8s;
+    animation-delay: 4.5s, 2s;
+}
+
+.snowflake:nth-of-type(12) {
+    left: 25%;
+    font-size: 1.3em;
+    animation-duration: 11s, 3s;
+    animation-delay: 2s, 1s;
+}
+
+
+
+/* Responsive Styles */
+
+/* Mobile and Small Screens */
+@media (max-width: 480px) {
+    .pin-screen {
+        width: 100%;
+        max-width: none;  /* Full width for small screens */
+        padding: 10px;
+    }
+
+    .pin-value {
+        font-size: 28px; /* Reduce font size */
+    }
+
+    .pin-keyboard-key {
+        font-size: 18px;  /* Smaller buttons */
+        height: 40px;
+    }
+
+    .pin-keyboard {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .snowflake {
+        font-size: 1.2em;  /* Smaller snowflakes for small screens */
+    }
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 768px) {
+    .pin-screen {
+        width: 80%;
+        padding: 14px;
+    }
+
+    .pin-value {
+        font-size: 30px;  /* Slightly smaller */
+    }
+
+    .pin-keyboard-key {
+        font-size: 20px;  /* Buttons adjusted */
+        height: 44px;
+    }
+
+    .snowflake {
+        font-size: 1.4em;  /* Moderate snowflakes for tablets */
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1024px) {
+    .pin-screen {
+        max-width: 400px;  /* Keep the default size for larger screens */
+    }
+
+    .pin-keyboard-key {
+        font-size: 22px;  /* Default size for desktop */
+    }
+
+    .snowflake {
+        font-size: 1.5em;  /* Larger snowflakes for desktops */
+    }
+}
