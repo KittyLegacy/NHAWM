@@ -36,7 +36,7 @@ const initPinScreen = (selector, onEnter) => {
   
 	if (pin === validPin) {
 	  // If PIN is valid, redirect to the home page
-	  window.location.href = "home.html";  // Change "home.html" to the desired URL
+	  window.location.href = "home.html";  
   
 	} else {
 	  // Handle invalid PIN (you can show an error message here)
