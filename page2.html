@@ -15,6 +15,41 @@
       font-size: 2rem;
       margin: 20px;
     }
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 90%;
+      max-width: 500px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 768px) {
+      .button-container {
+        flex-direction: column;
+      }
+    }
+    .image-button {
+      display: block;
+      width: 100%;
+      max-width: 150px;
+      border: none;
+      padding: 0;
+      background: none;
+      cursor: pointer;
+    }
+    .image-button img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+    .image-button img:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -41,12 +76,21 @@
     updateCounter(); // Initial call to show immediately
   </script>
 
-<audio autoplay loop controls>
-  <source src="forever.mp3" type="audio/mpeg">
-</audio>
+  <div class="button-container">
+    <a href="page3.html" class="image-button">
+      <img src="IMG_3056.jpg" alt="Go to Page 1">
+    </a>
+    <a href="page5.html" class="image-button">
+      <img src="IMG_3053.jpg" alt="Go to Page 2">
+    </a>
+    <a href="page4.html" class="image-button">
+      <img src="IMG_3054.jpg" alt="Go to Page 3">
+    </a>
+  </div>
 
-  <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
-<div class="commonninja_component pid-957ade9c-423c-46d9-8236-e297d67d7f6c"></div>
+  <audio autoplay loop controls>
+    <source src="forever.mp3" type="audio/mpeg">
+  </audio>
 
 </body>
 </html>
